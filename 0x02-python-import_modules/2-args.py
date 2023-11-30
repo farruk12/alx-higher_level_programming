@@ -1,9 +1,14 @@
 #!/usr/bin/python3
-from sys import argv
+import sys
+arguments = sys.argv[1:]
+length = len(arguments)
+
+if length == 0:
+    print("0 arguments.")
+else:
+    print("{} argument{}:".format(length, 's' if length != 1 else ''))
+    for i, arg in enumerate(arguments, start=1):
+        print("{}: {}".format(i, arg))
 
 if __name__ == "__main__":
-    num_args = len(argv) - 1
-    print("{} argument{}:".format(num_args, 's' if num_args != 1 else ''), end="")
-    print(" ." if num_args == 0 else "")
-    for i, arg in enumerate(argv[1:], start=1):
-        print("{}: {}".format(i, arg))
+    pass
